@@ -4,8 +4,8 @@ import { MapPinIcon, PhoneIcon, EnvelopeOpenIcon } from "@heroicons/react/24/sol
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0C4B65] text-white text-2xl py-10 pt-32">
-      <div className="bg-yellow-500 w-1/2 mx-auto flex gap-6 p-6 rounded absolute -top-5 left-96">
+    <footer className="bg-[#0C4B65] text-white text-2xl pb-10">
+      <div className="bg-yellow-500 w-1/2 mx-auto flex gap-6 p-6  rounded">
         <div className="font-bold">
           <p>Want to know latest news ?</p>
           <h3 className="text-[#0C4B65] text-5xl">Subscribe</h3>
@@ -21,7 +21,7 @@ const Footer = () => {
           </label>
         </div>
       </div>
-      <div className="container flex justify-around">
+      <div className="container flex justify-around mt-10">
         <div className="mb-6 lg:mb-0">
           <img src={logo} alt="Website Logo" className="h-64" />
         </div>
