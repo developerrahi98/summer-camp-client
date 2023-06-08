@@ -65,7 +65,7 @@ const Footer = () => {
             </li>
             <li className="mb-2">
               <a href="https://instagram.com">
-                <FaInstagram className="mr-2 inline-block text-yellow-500" />
+                <FaInstagram className="mr-2 inline-block text-yellow-500 " />
                 Instagram
               </a>
             </li>
