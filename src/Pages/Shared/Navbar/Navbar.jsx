@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../../assets/Logo/NicePng_music-logo-png_1173833.png";
 
 const Navbar = () => {
@@ -15,7 +16,9 @@ const Navbar = () => {
       <li>
         <a>Dashboard</a>
       </li>
-    
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
     </>
   );
   return (
