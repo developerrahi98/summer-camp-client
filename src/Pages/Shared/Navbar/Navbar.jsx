@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/Logo/NicePng_music-logo-png_1173833.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import {getAuth}  from "firebase/auth"
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
+
   const navbarItems = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <a>Instructors</a>
@@ -17,7 +28,7 @@ const Navbar = () => {
         <a>Dashboard</a>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to="/secret">Secret</Link>
       </li>
     </>
   );
@@ -51,12 +62,26 @@ const Navbar = () => {
         <img src={logo} className="h-20 ml-8" alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-xl">
-          {navbarItems}
-        </ul>
+        <ul className="menu menu-horizontal px-1 text-xl">{navbarItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <div className="dropdown dropdown-end mr-7">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            {user ? (
+              <>
+                <div className="w-10 rounded-full">
+                  <button onClick={handleLogOut} className="btn btn-ghost">
+                    <img />
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <button className="btn btn-active btn-ghost"><Link to="/login">Login</Link></button>
+              </>
+            )}
+          </label>
+        </div>
       </div>
     </div>
   );
