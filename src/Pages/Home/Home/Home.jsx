@@ -1,12 +1,12 @@
 import Banner from "../../Banner/Banner";
-import Slider from "../../Slider/Slider";
+import Animation from "../../Animation/Animation";
 
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Slider></Slider>
+            <Animation></Animation>
         </div>
     );
 };
