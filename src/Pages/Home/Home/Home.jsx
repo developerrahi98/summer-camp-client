@@ -1,12 +1,13 @@
 import Banner from "../../Banner/Banner";
-import Animation from "../../Animation/Animation";
+import PopularClasses from "../../PopularClasses/PopularClasses";
+
 
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Animation></Animation>
+            <PopularClasses></PopularClasses>
         </div>
     );
 };
