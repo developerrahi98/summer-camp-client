@@ -16,13 +16,13 @@ const TeacherCard = ({ teacher }) => {
         <h3 className="font-extrabold text-red-500 text-xl">
           {teaching_category}
         </h3>
-        <div className="flex justify-evenly my-5">
+      </div>
+      <div className="flex gap-3  mx-auto my-5 w-[280px]">
           <FaFacebook />
           <FaInstagram />
           <FaTwitter />
           <FaYoutube />
         </div>
-      </div>
     </div>
   );
 };

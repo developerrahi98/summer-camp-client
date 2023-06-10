@@ -37,7 +37,7 @@
       "duration": "3 months",
       "price": 700,
       "total_students": 30,
-      "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_6-770x440.jpg"
+      "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_4-770x440.jpg"
     },
     {
       "id": 6,
@@ -45,6 +45,6 @@
       "duration": "4 months",
       "price": 1200,
       "total_students": 25,
-      "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_4-770x440.jpg"
+      "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_6-770x440.jpg"
     }
 ]
