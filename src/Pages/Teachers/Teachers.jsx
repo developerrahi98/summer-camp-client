@@ -4,7 +4,7 @@ import TeacherCard from "../TeacherCard/TeacherCard";
 const Teachers = () => {
     const [teachers, setTeachers] = useState([]);
   useEffect(() => {
-    fetch("popularteacher.json")
+    fetch("http://localhost:5000/teachers")
       .then(res => res.json())
       .then(data =>{
         const popularTeacher = data.filter(teacher => teacher.total_students > 40);

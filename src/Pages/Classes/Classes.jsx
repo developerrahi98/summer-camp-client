@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 const Classes = () => {
   const [classes, setClasses] = useState([]);
   useEffect(() => {
-    fetch("popularclass.json")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => setClasses(data));
   }, []);

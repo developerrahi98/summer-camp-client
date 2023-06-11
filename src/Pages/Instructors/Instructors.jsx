@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 const Instructors = () => {
     const [teachers, setTeachers] = useState([]);
     useEffect(() => {
-      fetch("popularteacher.json")
+      fetch("http://localhost:5000/teachers")
         .then(res => res.json())
         .then(data =>{
           setTeachers(data)
