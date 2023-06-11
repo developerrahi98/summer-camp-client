@@ -1,7 +1,52 @@
 import { BanknotesIcon, CalendarDaysIcon } from '@heroicons/react/24/solid'
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const ClassesCard = ({ item }) => {
-  const { image, name, instructorName, seats, price, duration } = item;
+  const {id, image, name, instructorName, seats, price, duration } = item;
+  const {user} = useContext(AuthContext)
+  const navigate = useNavigate()
+  const handleSelectClass = (item) =>{
+    console.log(item);
+    if(user && user.email){
+        const selectedItem = {selectedItemId:id,name,image,price,email:user.email}
+        fetch('http://localhost:5000/selectedClass',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your class have been selected',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+    else {
+        Swal.fire({
+            title: 'Please Login to select the class',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Login Now'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             navigate('/login')
+            }
+          })
+    }
+  }
   return (
     <div>
       <div className="card w-96  shadow-xl">
@@ -32,7 +77,7 @@ const ClassesCard = ({ item }) => {
             {price}$
           </p>
           <div className="card-actions justify-end">
-            <button className="btn bg-yellow-500 text-white font-bold border-0">
+            <button onClick={()=>handleSelectClass(item)} className="btn bg-yellow-500 text-white font-bold border-0">
               Select
             </button>
           </div>
