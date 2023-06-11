@@ -1,7 +1,7 @@
 const InstructorCard = ({ teacher }) => {
   const { name, email, image } = teacher;
   return (
-    <div className="card lg:card-side bg-[#0C4B65] shadow-xl">
+    <div className="card lg:card-side  bg-[#0C4B65] shadow-xl">
       <figure>
         <img
           src={image}

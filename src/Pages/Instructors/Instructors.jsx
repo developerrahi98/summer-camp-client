@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import InstructorCard from "../InstructorCard/InstructorCard";
+import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
     const [teachers, setTeachers] = useState([]);
@@ -11,7 +12,10 @@ const Instructors = () => {
         })
     }, []);
   return (
-    <div className="bg-white">
+    <div className="bg-white mb-10">
+        <Helmet>
+            <title>JAM ACADEMY | Instructors</title>
+        </Helmet>
       <div className="my-10 text-center">
         <h2 className="text-red-600 text-2xl font-bold">Our Team</h2>
         <h1 className="text-[#0C4B65] font-extrabold text-4xl my-4 ">

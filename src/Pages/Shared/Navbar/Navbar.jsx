@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/Logo/NicePng_music-logo-png_1173833.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import {getAuth}  from "firebase/auth"
+
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to='/instructor'>Instructors</Link>
       </li>
       <li>
-        <a>Classes</a>
+        <Link to='/classes'>Classes</Link>
       </li>
       <li>
         <a>Dashboard</a>
@@ -30,7 +30,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar  z-10 mt-0 text-white font-bold bg-opacity-30 bg-black">
+    <div className="navbar text-yellow-500 font-bold  bg-[#0C4B65]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

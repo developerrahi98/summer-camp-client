@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Secret from "../Pages/Secret/Secret";
 import Instructors from "../Pages/Instructors/Instructors";
+import Classes from "../Pages/Classes/Classes";
 
  export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ import Instructors from "../Pages/Instructors/Instructors";
         {
           path:"/instructor",
           element:<Instructors></Instructors>
+        },
+        {
+          path:"/classes",
+          element:<Classes></Classes>
         }
       ]
     },
