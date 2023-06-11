@@ -6,7 +6,10 @@ const PopularClasses = () => {
   useEffect(() => {
     fetch("popularclass.json")
       .then(res => res.json())
-      .then(data => setClasses(data))
+      .then(data => {
+        const popularClasses = data.filter(item => item.total_students > 40);
+        setClasses(popularClasses);
+      })
   }, []);
 
   return (

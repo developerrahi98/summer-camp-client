@@ -3,36 +3,42 @@
       "id": 1,
       "name": "Courteny Lee",
       "image": "http://notacorda.like-themes.com/wp-content/uploads/2017/10/w3.jpg",
+      "total_students": 45,
       "teaching_category": "Piano"
     },
     {
       "id": 2,
       "name": "Jane Johnson",
       "image": "http://notacorda.like-themes.com/wp-content/uploads/2017/10/m1.jpg",
+      "total_students": 55,
       "teaching_category": "Guitar"
     },
     {
       "id": 3,
       "name": "Francis Habbant",
       "image": "http://notacorda.like-themes.com/wp-content/uploads/2017/10/w1.jpg",
+      "total_students": 60,
       "teaching_category": "Violin"
     },
     {
       "id": 4,
       "name": "Emily Wilson",
       "image": "http://notacorda.like-themes.com/wp-content/uploads/2017/10/w2.jpg",
+      "total_students": 50,
       "teaching_category": "Singing"
     },
     {
       "id": 5,
       "name": "David Brown",
       "image": "http://notacorda.like-themes.com/wp-content/uploads/2017/10/m1.jpg",
+      "total_students": 55,
       "teaching_category": "Drums"
     },
     {
       "id": 6,
       "name": "Sarah Taylor",
       "image": "http://notacorda.like-themes.com/wp-content/uploads/2017/10/w2.jpg",
+      "total_students": 45,
       "teaching_category": "Flute"
     }
   ]

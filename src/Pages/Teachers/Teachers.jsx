@@ -4,9 +4,12 @@ import TeacherCard from "../TeacherCard/TeacherCard";
 const Teachers = () => {
     const [teachers, setTeachers] = useState([]);
   useEffect(() => {
-    fetch("teacher.json")
+    fetch("popularteacher.json")
       .then(res => res.json())
-      .then(data => setTeachers(data))
+      .then(data =>{
+        const popularTeacher = data.filter(teacher => teacher.total_students > 40);
+        setTeachers(popularTeacher)
+      })
   }, []);
 
   return (

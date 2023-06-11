@@ -12,7 +12,7 @@
       "name": "Violin",
       "duration": "3 months",
       "price": 800,
-      "total_students": 30,
+      "total_students": 45,
       "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_3-770x440.jpg"
     },
     {
@@ -20,7 +20,7 @@
       "name": "Piano",
       "duration": "4 months",
       "price": 1200,
-      "total_students": 25,
+      "total_students": 55,
       "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_2-770x440.jpg"
     },
     {
@@ -28,7 +28,7 @@
       "name": "Vocal",
       "duration": "6 months",
       "price": 1000,
-      "total_students": 40,
+      "total_students": 60,
       "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_5-770x440.jpg"
     },
     {
@@ -36,7 +36,7 @@
       "name": "Winds",
       "duration": "3 months",
       "price": 700,
-      "total_students": 30,
+      "total_students": 55,
       "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_4-770x440.jpg"
     },
     {
@@ -44,7 +44,7 @@
       "name": "Drum",
       "duration": "4 months",
       "price": 1200,
-      "total_students": 25,
+      "total_students": 50,
       "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_6-770x440.jpg"
     }
 ]
