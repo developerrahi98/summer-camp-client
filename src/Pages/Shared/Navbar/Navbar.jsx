@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <a>Instructors</a>
+        <Link to='/instructor'>Instructors</Link>
       </li>
       <li>
         <a>Classes</a>
@@ -30,7 +30,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar fixed  z-10 mt-0 text-white font-bold bg-opacity-30 bg-black">
+    <div className="navbar  z-10 mt-0 text-white font-bold bg-opacity-30 bg-black">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

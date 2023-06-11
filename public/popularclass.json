@@ -46,5 +46,29 @@
       "price": 1200,
       "total_students": 50,
       "image" :"http://notacorda.like-themes.com/wp-content/uploads/2017/10/Class_6-770x440.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Electric Guitar",
+      "duration": "6 months",
+      "price": 1500,
+      "total_students": 30,
+      "image" :"https://img.freepik.com/free-vector/hand-drawn-electric-guitar-background_23-2147621984.jpg?w=740&t=st=1686461983~exp=1686462583~hmac=943b90fbc3061b36b6374e9a93d471de9673957f044d6b062aeca93a37e5e011"
+    },
+    {
+      "id": 8,
+      "name": "Keypad",
+      "duration": "3 months",
+      "price": 1000,
+      "total_students": 20,
+      "image" :"https://img.freepik.com/free-photo/electronic-musical-instrument-audio-mixer-sound-equalizer-analog-modular-synthesizer_1381-5.jpg?w=1060&t=st=1686462073~exp=1686462673~hmac=a878ba3f587f3abc5f05306857152d56b4ec4119a52bff34821587c12a069736"
+    },
+    {
+      "id": 9,
+      "name": "Sitara",
+      "duration": "8 months",
+      "price": 2000,
+      "total_students": 15,
+      "image" :"https://img.freepik.com/free-vector/golden-guitar-instrument-hand-drawn-happy-saraswati_23-2148801083.jpg?w=740&t=st=1686462229~exp=1686462829~hmac=a1b62a4bbdff5a11b0e429166360d59533d2762bdb8af71450854c11cb9f7056"
     }
 ]
