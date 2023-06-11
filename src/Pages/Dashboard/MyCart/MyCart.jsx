@@ -1,11 +1,40 @@
 import { Helmet } from "react-helmet-async";
 import useCart from "../../../Hooks/useCart";
 import { FaTrashAlt } from 'react-icons/fa';
+import Swal from "sweetalert2";
 
 const MyCart = () => {
-  const [cart] = useCart();
-  console.log(cart);
+  const [cart, refetch] = useCart();
+
   const total = cart.reduce((sum, item) => item.price + sum, 0);
+  const handleDelete = (item) =>{
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/carts/${item._id}`,{
+            method: 'DELETE',
+          })
+           .then(res=>res.json())
+           .then(data=>{
+            if(data.deletedCount > 0) {
+                refetch();
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+            }
+          })
+        }
+      })
+  }
   return (
     <div>
       <Helmet>
@@ -38,7 +67,7 @@ const MyCart = () => {
           </thead>
           <tbody>
             {
-                cart.map((row, index) =>   <tr 
+                cart.map((item, index) =>   <tr 
                     key={cart._id}
                 >
                 <th>
@@ -49,7 +78,7 @@ const MyCart = () => {
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img
-                          src={row.image}
+                          src={item.image}
                           alt="Avatar Tailwind CSS Component"
                         />
                       </div>
@@ -57,11 +86,11 @@ const MyCart = () => {
                   </div>
                 </td>
                 <td>
-                  {row.name}
+                  {item.name}
                 </td>
-                <td>{row.price}</td>
+                <td>{item.price}</td>
                 <th>
-                  <button className="btn btn-ghost bg-red-500 text-white "><FaTrashAlt></FaTrashAlt></button>
+                  <button onClick={()=>handleDelete(item)} className="btn btn-ghost bg-red-500 text-white "><FaTrashAlt></FaTrashAlt></button>
                 </th>
               </tr>)
             }
