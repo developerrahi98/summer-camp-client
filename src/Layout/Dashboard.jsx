@@ -30,8 +30,8 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
-                  <FaWallet></FaWallet> Payment History
+                <NavLink to="/dashboard/addclasses">
+                   Add Class
                 </NavLink>
               </li>
               <li>
