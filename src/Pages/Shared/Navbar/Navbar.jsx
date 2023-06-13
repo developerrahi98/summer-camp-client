@@ -3,9 +3,9 @@ import logo from "../../../assets/Logo/NicePng_music-logo-png_1173833.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -19,13 +19,13 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to='/instructor'>Instructors</Link>
+        <Link to="/instructor">Instructors</Link>
       </li>
       <li>
-        <Link to='/classes'>Classes</Link>
+        <Link to="/classes">Classes</Link>
       </li>
       <li>
-        <Link to="/dashboard/mycart">Dashboard</Link>
+        {user ? <Link to="/dashboard/mycart">Dashboard</Link> : <span></span>}
       </li>
     </>
   );
@@ -62,22 +62,30 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 text-xl">{navbarItems}</ul>
       </div>
       <div className="navbar-end">
-        <div className="dropdown dropdown-end mr-7">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            {user ? (
-              <>
-                <div className="w-10 rounded-full">
-                  <button onClick={handleLogOut} className="btn btn-ghost">
-                    <img />
-                  </button>
-                </div>
-              </>
-            ) : (
-              <>
-                <button className="btn btn-active btn-ghost"><Link to="/login">Login</Link></button>
-              </>
-            )}
-          </label>
+        <div>
+          {user ? (
+            <>
+              <div className="flex gap-2">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  </div>
+                </label>
+                <button
+                  onClick={handleLogOut}
+                  className="btn btn-active btn-ghost"
+                >
+                  <Link to="/login">Log Out</Link>
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <button className="btn btn-active btn-ghost">
+                <Link to="/login">Login</Link>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

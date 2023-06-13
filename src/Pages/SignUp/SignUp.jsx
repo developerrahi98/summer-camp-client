@@ -2,25 +2,12 @@ import { useContext } from "react";
 import image from "../../assets/Login/istockphoto-1303860322-612x612.jpg";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getAuth } from "firebase/auth";
-import { app } from "../../Firebase/Firebase.config";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SignUp = () => {
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-  const handleGoogleSignIn = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   const { createUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
@@ -155,6 +142,25 @@ const SignUp = () => {
                   </p>
                 )}
               </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-white font-bold">
+                   Confirm Password
+                  </span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="confirm password"
+                  name="confirmPassword"
+                  className="input input-bordered bg-white"
+                  {...register("password", {
+                    required: true,
+                  })}
+                />
+                {errors.password?.type === "required" && (
+                  <p className="text-red-600">Password is required</p>
+                )}
+              </div>
               <div className="form-control mt-6 ">
                 <input
                   className="btn bg-red-700 border-0 text-white font-bold"
@@ -163,15 +169,15 @@ const SignUp = () => {
                 />
               </div>
             </form>
+            <div className=" text-red-600 mb-10 font-bold">
+              <SocialLogin></SocialLogin>
+            </div>
           </div>
-          <div className="mt-5">
-            <button
-              onClick={handleGoogleSignIn}
-              className="btn btn-active bg-red-700 border-0 text-white  px-16"
-            >
-              Sign Up with Google
-            </button>
-          </div>
+          <p className="font-bold text-red-700 text-center">
+            <small>
+              <Link to="/login">Already have an account login.</Link>
+            </small>
+          </p>
         </div>
       </div>
     </div>

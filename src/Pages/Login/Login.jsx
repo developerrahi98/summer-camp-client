@@ -3,21 +3,9 @@ import image from "../../assets/Login/4957136.jpg";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { app } from "../../Firebase/Firebase.config";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getAuth } from "firebase/auth";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-  const handleGoogleSignIn = () => {
-    signInWithPopup(auth, provider)
-    .then(result => {
-        const user = result.user;
-        console.log(user);
-    })
-    .catch(err => {console.log(err);})
-  }
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -91,17 +79,15 @@ const Login = () => {
                 />
               </div>
             </form>
+            <div className="mb-10 text-red-600 font-bold">
+              <SocialLogin></SocialLogin>
+            </div>
           </div>
           <p className="font-bold text-red-700 text-center">
             <small>
               New Here ?<Link to="/signup"> Create an account.</Link>
             </small>
           </p>
-          <div className="mt-5">
-            <button onClick={handleGoogleSignIn} className="btn btn-active bg-red-700 border-0 text-white  px-16">
-              Sign In with Google
-            </button>
-          </div>
         </div>
       </div>
     </div>
