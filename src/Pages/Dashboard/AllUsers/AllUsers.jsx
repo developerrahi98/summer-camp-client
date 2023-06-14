@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import { FaChalkboardTeacher, FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
@@ -33,11 +33,11 @@ const AllUsers = () => {
   };
   const handleDelete = (user) => {};
   return (
-    <div>
+    <div className="w-full h-full my-10">
       <Helmet>
         <title>JAM ACADEMY | All Users</title>
       </Helmet>
-      <h3 className="text-3xl font-bold ">Total Users : {users.length}</h3>
+      <h3 className="text-3xl my-5 font-bold text-[#0C4B65]  text-center">Total Users : {users.length}</h3>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           {/* head */}
@@ -46,7 +46,8 @@ const AllUsers = () => {
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
+              <th>Make Instructor</th>
+              <th>Make Admin</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -56,6 +57,7 @@ const AllUsers = () => {
                 <th>{index + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
+                <td><button className="btn btn-ghost bg-orange-500 text-white "><FaChalkboardTeacher></FaChalkboardTeacher></button></td>
                 <td>
                   {user.role === "admin" ? (
                     "admin"

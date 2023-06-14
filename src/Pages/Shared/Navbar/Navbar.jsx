@@ -3,9 +3,11 @@ import logo from "../../../assets/Logo/NicePng_music-logo-png_1173833.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import DarkMode from "../../../Component/DarkMode/DarkMode";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
 
   const handleLogOut = () => {
     logOut()
@@ -25,7 +27,7 @@ const Navbar = () => {
         <Link to="/classes">Classes</Link>
       </li>
       <li>
-        {user ? <Link to="/dashboard/mycart">Dashboard</Link> : <span></span>}
+        {user ? <Link to={isAdmin? '/dashboard/adminhome' : '/dashboard/userhome'}>Dashboard</Link> : <span></span>}
       </li>
     </>
   );
@@ -69,7 +71,7 @@ const Navbar = () => {
               <div className="flex gap-2">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <img src={user.photoURL} />
                   </div>
                 </label>
                 <button

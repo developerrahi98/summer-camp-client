@@ -1,5 +1,14 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaHome } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaWallet,
+  FaHome,
+  FaBuffer,
+  FaUnity,
+  FaUsers,
+  FaBookOpen,
+  FaChalkboardTeacher,
+} from "react-icons/fa";
 import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
@@ -25,23 +34,23 @@ const Dashboard = () => {
             <>
               {" "}
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/adminhome">
                   <FaHome></FaHome> Admin Home
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/addclasses">
-                   Add Class
+                  <FaBuffer></FaBuffer> Add Class
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/manageclasses">
-                   Manage Class
+                  <FaUnity></FaUnity> Manage Classes
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/allusers">
-                  <FaShoppingCart></FaShoppingCart> All Users
+                  <FaUsers></FaUsers> All Users
                 </NavLink>
               </li>{" "}
             </>
@@ -49,7 +58,7 @@ const Dashboard = () => {
             <>
               {" "}
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/userhome">
                   <FaHome></FaHome> User Home
                 </NavLink>
               </li>
@@ -60,7 +69,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/mycart">
-                  <FaShoppingCart></FaShoppingCart> My Cart
+                  <FaBookOpen></FaBookOpen> My Selected Classes
                 </NavLink>
               </li>{" "}
             </>
@@ -72,10 +81,14 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/classes">Classes</NavLink>
+            <NavLink to="/classes">
+              <FaBookOpen></FaBookOpen> Classes
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/instructor">Instructor</NavLink>
+            <NavLink to="/instructor">
+              <FaChalkboardTeacher></FaChalkboardTeacher> Instructor
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -51,16 +51,16 @@ const AddClasses = () => {
   console.log(errors);
   console.log(img_hosting_token);
   return (
-    <div>
-      <h1>Add a Class</h1>
+    <div className="w-1/2 mx-auto h-full my-10">
+      <h1 className="text-3xl font-bold text-[#0C4B65]  text-center ">Add a Class</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Class Name</span>
+            <span className="label-text font-bold">Class Name</span>
           </label>
           <input
             type="text"
-            placeholder="Type here"
+            placeholder="class name"
             name="name"
             className="input input-bordered w-full max-w-xs"
             {...register("name", { required: true })}
@@ -68,11 +68,11 @@ const AddClasses = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Price</span>
+            <span className="label-text font-bold">Price</span>
           </label>
           <input
             type="number"
-            placeholder="Type here"
+            placeholder="price"
             name="price"
             className="input input-bordered w-full max-w-xs"
             {...register("price", { required: true })}
@@ -80,18 +80,18 @@ const AddClasses = () => {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Details</span>
+            <span className="label-text font-bold">Details</span>
           </label>
           <textarea
             className="textarea textarea-bordered h-24"
-            placeholder="Bio"
+            placeholder="details"
             name="details"
             {...register("details", { required: true })}
           ></textarea>
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Pick a file</span>
+            <span className="label-text font-bold">Pick a file</span>
           </label>
           <input
             type="file"
@@ -100,7 +100,7 @@ const AddClasses = () => {
             {...register("image", { required: true })}
           />
         </div>
-        <input className="btn btn-small" type="submit" value="Add Class" />
+        <input className="btn btn-small my-5 bg-yellow-500 text-red-800 font-bold" type="submit" value="Add Class" />
       </form>
     </div>
   );

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@egjs/react-flicking": "^4.10.9",
+    "@emotion/react": "^11.11.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -18,6 +19,7 @@
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
     "@tanstack/react-query": "^4.29.12",
+    "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "dotenv": "^16.1.4",
     "firebase": "^9.22.1",
@@ -27,6 +29,7 @@
     "pure-react-carousel": "^1.30.1",
     "react": "^18.2.0",
     "react-animatable": "^0.13.6",
+    "react-awesome-reveal": "^4.2.3",
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",

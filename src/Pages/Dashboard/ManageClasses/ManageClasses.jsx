@@ -2,6 +2,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import useClass from "../../../Hooks/useClass";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { FcApprove, FcFeedback } from "react-icons/fc";
 
 const ManageClasses = () => {
   const [classes, refetch] = useClass();
@@ -33,19 +34,21 @@ const ManageClasses = () => {
       })
   }
   return (
-    <div>
-      <h1>Manage All Classes</h1>
+    <div className="w-full h-full my-10">
+      <h1 className="text-3xl font-bold text-[#0C4B65]  text-center my-8">Manage All Classes</h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
               <th>#</th>
+              <th>Image</th>
               <th>Name</th>
               <th>Price</th>
-              <th>Favorite Color</th>
-              <th>Update</th>
-              <th>Delete</th>
+              <th>Seats</th>
+              <th>Approve</th>
+              <th>Deny</th>
+              <th>Feedback</th>
             </tr>
           </thead>
           <tbody>
@@ -62,15 +65,13 @@ const ManageClasses = () => {
                         />
                       </div>
                     </div>
-                    <div>
-                      <div className="font-bold">Hart Hagerty</div>
-                    </div>
                   </div>
                 </td>
-                <td>Zemlak, Daniel and Leannon</td>
-                <td>Purple</td>
+                <td>{item.name}</td>
+                <td>{item.price}</td>
+                <td>{item.seats}</td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  <button className="btn btn-ghost text-xl"><FcApprove></FcApprove></button>
                 </td>
                 <td>
                   <button
@@ -79,6 +80,9 @@ const ManageClasses = () => {
                   >
                     <FaTrashAlt></FaTrashAlt>
                   </button>
+                </td>
+                <td>
+                  <button className="btn btn-ghost text-xl"><FcFeedback></FcFeedback></button>
                 </td>
               </tr>
             ))}

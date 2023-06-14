@@ -2,7 +2,6 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import './CheckOutFrom.css'
 import useCart from "../../../Hooks/useCart";
 
 const CheckOutForm = ({price}) => {
@@ -93,6 +92,7 @@ const CheckOutForm = ({price}) => {
     <>
       <form onSubmit={handleSubmit}>
         <CardElement
+        className="border border-[#0C4B65] border-3  p-4"
           options={{
             style: {
               base: {
@@ -109,7 +109,7 @@ const CheckOutForm = ({price}) => {
           }}
         />
         <button
-          className="btn btn-outline btn-primary"
+          className="btn my-5 bg-yellow-500 text-red-700 font-bold text-xl px-8"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
