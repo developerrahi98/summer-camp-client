@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <HelmetProvider>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
-          <div className="bg-white">
+          <div className="bg-[var(--body_background)] text-bg-[var(--body_color)]">
             {" "}
             <RouterProvider router={router} />
           </div>

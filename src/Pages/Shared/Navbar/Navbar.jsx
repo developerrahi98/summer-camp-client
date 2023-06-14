@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/Logo/NicePng_music-logo-png_1173833.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import DarkMode from "../../../Component/DarkMode/DarkMode";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -56,6 +57,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img src={logo} className="h-20 ml-8" alt="" />
+        <DarkMode></DarkMode>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-xl">{navbarItems}</ul>
