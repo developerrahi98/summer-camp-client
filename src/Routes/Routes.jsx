@@ -16,6 +16,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddClasses from "../Pages/Dashboard/AddClasses/AddClasses";
 import AdminRoute from "./AdminRoute";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
+import Payment from "../Pages/Dashboard/Payement/Payment";
 
  export const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
         {
           path:"mycart",
           element:<MyCart></MyCart>
+        },
+        {
+          path:"payment",
+          element:<Payment></Payment>
         },
         {
           path:"allusers",
