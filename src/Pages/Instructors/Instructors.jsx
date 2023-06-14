@@ -12,7 +12,7 @@ const Instructors = () => {
         })
     }, []);
   return (
-    <div className="bg-white mb-10">
+    <div className=" mb-10">
         <Helmet>
             <title>JAM ACADEMY | Instructors</title>
         </Helmet>
